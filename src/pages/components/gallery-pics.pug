@@ -1,0 +1,14 @@
+
+mixin gallery-pics 
+    .gallery__pics-container 
+        .gallery__pics-secondary 
+            each link in [1, 2, 3]
+                a(href=`../../img/gallery_pic${link}_large.jpg` data-fancybox="images")
+                    picture 
+                        source(srcset=`../../img/gallery_pic${link}_icon.jpg 70w, ../../img/gallery_pic${link}_icon_medium.jpg 104w, ../../img/gallery_pic${link}_icon_small.jpg 86w,` sizes="(min-width: 1200px) 70px, (min-width: 768px) 104px, (min-width: 320px) 86px")
+                        img.gallery__pics-elem(src=`../../img/gallery_pic${link}_icon.jpg` alt="gallery-pic1")
+        picture 
+            source(srcset="../../img/slider_cat4.jpg 500w, ../../img/slider_cat4_medium.jpg 354w, ../../img/slider_cat4_small.jpg 290w" sizes="(min-width: 1200px) 500px, (min-width: 768px) 354px, (min-width: 380px) 75vw, (max-width: 379px) 100vw")
+            img.gallery__pics-prime(src="../../img/slider_cat4.jpg", alt="Cat pic in lux room")
+
+    

@@ -1,0 +1,40 @@
+.gallery__pics {
+
+    @include reviews {
+        margin-bottom: 40px;
+    }
+
+    &-container {
+        @include flex(row, center, center);
+
+        @include largeDesktops {
+            flex-direction: column;
+        }
+    }
+    
+    &-secondary {
+        @include flex(column, space-between, center);
+        margin-right: 30px;
+        height: 396px;
+
+        @include largeDesktops {
+            width: 100%;
+            margin: 21px 0 0;
+            flex-direction: row;
+            height: fit-content;
+            order: 1;
+        }
+    }
+
+    &-elem {
+        opacity: 0.5;
+        border-radius: 4px;
+        transition: 0.25s linear;
+
+        &:hover {
+            box-shadow: 0 0 20px 5px var(--bcg-yellow);
+            opacity: 1;
+        }
+    }
+
+}
