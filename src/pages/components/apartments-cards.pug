@@ -3,7 +3,7 @@ mixin apartments-cards()
         each elem in [1, 2, 3, 4, 5, 6]
             li.apartments-cards__item  
                 .apartments-cards__container
-                    a(href="#")
+                    a(href="apartments-card.html")
                         picture 
                             source(srcset=`img/card_cat${elem}.jpg 270w, img/card_cat${elem}_large.jpg 324w, img/card_cat${elem}_medium.jpg 290w` sizes="(min-width: 1200px) 270px, (min-width: 768px) 324px, (min-width: 320px) 290px")
                             img.apartments-cards__pic(src=`img/card_cat${elem}.jpg`, alt=`card cat${elem}`) 
