@@ -1,0 +1,16 @@
+mixin dropdown-filter() 
+    .apartments__dropdown
+        ul.list.apartments__dropdown-content 
+            each cls in [["up", 0, true], ["down", 1]]
+                if (cls[2] === true)
+                    li.apartments__dropdown-item.item_no_margin.arrow_st_rotate(data-id=`${cls[1]}`)
+                        span.icons_e_drop(class=`--arrow_${cls[0]}-icon`)
+                        span.txt.text_e_dropdown По площади
+                else    
+                    li.apartments__dropdown-item(data-id=`${cls[1]}`)
+                        span.icons_e_drop(class=`--arrow_${cls[0]}-icon`)
+                        span.txt.text_e_dropdown По площади   
+            each cls in [["up", 2], ["down", 3]]
+                li.apartments__dropdown-item(data-id=`${cls[1]}`)
+                    span.icons_e_drop(class=`--arrow_${cls[0]}-icon`)
+                    span.txt.text_e_dropdown По цене

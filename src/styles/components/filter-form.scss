@@ -1,0 +1,232 @@
+@keyframes anim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.active_anim {
+  display: flex !important;
+  animation: anim 0.5s linear;
+  transition: 0.5s linear;
+}
+
+.wrapper_elem {
+  &_form {
+    @include largeDesktops {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    padding: 136px 0;
+    width: 100vw;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    transition: 0.25s linear;
+    }
+
+    @include reviews {
+      padding: 102px 0;
+    }
+  }
+
+  &_close-btn {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    mask-image: url(../../img/icons/icon_fitler_close.svg);
+    mask-repeat: no-repeat;
+    background-color: var(--text-black);
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    top: 25px;
+    right: 25px;
+    transition: 0.25s linear;
+    z-index: 1001;
+
+    @include largeDesktops {
+      display: inline-block;
+    }
+    
+      &:hover {
+        background-color: var(--bcg-yellow);
+      }
+    }
+}
+
+.apartments-form {
+  position: relative;
+  @include flex(column, flex-start, flex-start);
+  margin-right: 90px;
+  height: fit-content;
+
+  @include largeDesktops {
+    background: #FFFEFD;
+    box-shadow: 0px 4px 25px rgba(153, 153, 153, 0.25);
+    border-radius: 6px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 50px 60px;
+  }
+
+  @include reviews {
+    padding: 50px 25px;
+  }
+
+  &__input {
+    margin: 20px 0 35px;
+    @include onlyFlex();
+
+    &-elem {
+      display: inline-block;
+      padding: 7px 0 7px 5px;
+      border: 1px solid var(--dot-gray);
+      max-width: 100px;
+      transition: 0.25s linear;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+      }
+    }
+
+    &-elem::placeholder {
+      font-size: 17px;
+      line-height: 17px;
+      color: var(--text-black);
+      transition: 0.5s ease-in-out;
+    }
+
+    &-elem:focus::placeholder {
+      position: relative;
+      transform: scale(0.5);
+      color: var(--bcg-yellow);
+      bottom: 4px;
+      left: -20px;
+      opacity: 0.7;
+    }
+
+    &-elem:focus {
+      border: 1px solid var(--bcg-yellow);
+    }
+
+    &-elem:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__square-checkbox {
+    position: relative;
+    @include flex(column, flex-start, flex-start);
+    margin: 25px 0 40px;
+
+    label:nth-child(-n + 5) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__equipment-checkbox {
+    position: relative;
+    @include flex(column, flex-start, flex-start);
+    margin: 25px 0 42px;
+
+    label:nth-child(-n + 4) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__text {
+    display: inline-flex;
+    user-select: none;
+    align-items: center;
+    font: 500 16px Lato;
+    line-height: 19px;
+  }
+
+  &__btn {
+    border: 2px solid var(--bcg-yellow);
+    box-sizing: border-box;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+    transition: 0.25s linear;
+
+    @include reviews {
+      width: 100%;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -999;
+  }
+
+  &__checkbox:checked + &__text::before {
+    background: url(../../img/icons/icon_checkbox_checked.svg) no-repeat center
+      center;
+  }
+
+  &__checkbox:hover + &__text::before {
+    border-color: var(--bcg-orange);
+  }
+
+  &__checkbox:active + &__text::before {
+    border-color: var(--bcg-orange);
+    opacity: 0.3;
+  }
+
+  &__checkbox:not(:disabled):checked:focus + &__text::before {
+    border-color: #fae1d6;
+    box-shadow: 0 0 7px 1px #fdb292;
+  }
+
+  &__text {
+    &::before {
+      display: inline-block;
+      content: "";
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin-right: 30px;
+      border: 1px solid var(--dot-gray);
+    }
+  }
+}
+
+.btn_type_submit {
+  padding: 15px 55px 17px 56px;
+  background: var(--bcg-yellow);
+  margin-bottom: 15px;
+
+  &:hover {
+    color: var(--bcg-white);
+  }
+}
+
+.btn_type_reset {
+  padding: 15px 34px 17px;
+  background-color: var(--bcg-white);
+
+  &:hover {
+    background-color: var(--bcg-yellow);
+  }
+}
