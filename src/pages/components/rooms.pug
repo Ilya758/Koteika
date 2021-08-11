@@ -1,0 +1,29 @@
+mixin rooms(heading, secClass = "")
+    section.rooms(class=secClass)
+        .container.rooms__container  
+            .rooms__content 
+                h2.rooms__heading=heading
+                .rooms__slider
+                    each item in [1, 2, 3]
+                       .rooms__slider-item
+                            img.rooms__slider-pic(src=`../../img/slider_cat${item}.jpg`, alt="economy_room")
+                            .rooms__slider-content     
+                                .rooms__slider-info 
+                                    h3.rooms__slider-heading Эконом плюс
+                                    ul.list.rooms__slider-list 
+                                        li.item.rooms__slider-list__item  
+                                            span.dot_c_orange 
+                                            span Площадь - 0,90 м2
+                                        li.item.rooms__slider-list__item  
+                                            span.dot_c_orange 
+                                            span Размеры (ШхГхВ) — 90х100х180 см
+                                        li.item.rooms__slider-list__item  
+                                            span.dot_c_orange 
+                                            span Цена за сутки: 200₽
+                                    button.btn.btn_c_orange.rooms__btn(type="button") 
+                                        span Забронировать
+                                        span    
+                .rooms__controls
+                        .rooms__controls-dots
+                        .rooms__controls-arrows
+    

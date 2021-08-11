@@ -1,0 +1,121 @@
+.priorities {
+  width: 100%;
+
+  &__list {
+    @include flex("row", "space-between", "flex-start");
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    @include reviews {
+      justify-content: space-around;
+      margin: 0;
+    }
+  }
+
+  &__item {
+    width: calc((100% / 3) - 30px);
+    padding: 0 15px;
+    background: #ffffff;
+    box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    min-height: 321px;
+
+    span:first-child {
+      white-space: nowrap;
+
+      @media screen and (max-width: 1365px) {
+        white-space: normal;
+      }
+    }
+
+    @include largeDesktops{
+      width: calc((100% / 2) - 30px);
+      min-height: 285px;
+      margin-bottom: 30px;
+    }
+
+    @include reviews {
+      padding: 0;
+      align-items: center;
+      text-align: center;
+      width: calc(100% / 1);
+      min-height: 0;
+    }
+
+    @include mPhones {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    @include xsPhones() {
+      max-width: 290px;
+      min-height: 248px;
+    }
+
+    @each $elem in temperature, videocam, taxi, food, walking, doctor {
+      span.--#{$elem}-icon {
+        background: url(../../../img/icons/icon_#{$elem}.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 91px;
+        height: 91px;
+        margin: 30px 0 31px 30px;
+
+        @include largeDesktops {
+          margin: 25px 0 28px 25px;
+          width: 75px;
+          height: 75px;
+        }
+
+        @include reviews {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    &-list {
+      margin: 0 30px;
+
+      @include largeDesktops {
+        margin: 0 25px;
+      }
+
+      @include reviews {
+        margin-right: 10px;
+      }
+    }
+
+    &-item {
+      span {
+        font: normal 500 22px Rubik;
+        line-height: 15px;
+
+        @include largeDesktops {
+          font-size: 20px;
+          line-height: 14px;
+        }
+
+        @include reviews {
+          font-size: 18px;
+          line-height: 13px;
+        }
+      }
+
+      p {
+        line-height: 22px;
+        margin: 20px 0 52px;
+        letter-spacing: 0.2px;
+
+        @include largeDesktops {
+          margin-bottom: 25px;
+          font-size: 15px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+}

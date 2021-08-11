@@ -1,0 +1,255 @@
+@import "../utils/variables";
+
+@import "../utils/fonts";
+
+.rooms {
+  display: block;
+
+  &__inner {
+    width: 100%;
+  }
+
+  &__content {
+    position: relative;
+    @include flex("column");
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      top: 20px;
+      left: -20px;
+      z-index: -999;
+      background-image: url(../../../img/background_fish.svg);
+      width: 484px;
+      height: 151px;
+
+      @include largeDesktops {
+        width: 339px;
+        height: 106px;
+        background-size: cover;
+        top: 32px;
+      }
+
+      @include reviews {
+        width: 150px;
+        height: 46px;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 7px 0 70px;
+    font: bold 36px Rubik;
+    line-height: 25px;
+
+    @include largeDesktops {
+      margin: 0 0 60px 0;
+    }
+
+    @include reviews {
+      margin: 0 0 40px 0;
+      font-size: 28px;
+    }
+  }
+
+  &__slider {
+    &-item {
+      position: relative;
+      display: flex !important;
+      align-items: center;
+      margin-right: 62px;
+
+      @include reviews {
+        flex-direction: column;
+        margin-right: 24px;
+      }
+    }
+
+    &-pic {
+      position: relative;
+      right: -67px;
+      z-index: -999;
+
+      @include largeDesktops {
+        width: 442px;
+        height: 326px;
+        right: -110px;
+      }
+
+      @include reviews {
+        position: static;
+        border-radius: 8px 8px 0px 0px;
+        object-fit: cover;
+        width: 80vw;
+      }
+
+      @include widjets {
+        max-height: 250px;
+      }
+
+      @include sPhones {
+        width: 100%;
+        height: 192px;
+      }
+
+      @media (max-width: 319px) {
+        width: 30%;
+        height: 30%;
+      }
+    }
+
+    &-content {
+      background: #ffffff;
+      height: fit-content;
+      box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+      border-radius: 8px;
+
+      @include largeDesktops {
+        margin-right: 45px;
+      }
+
+      @include reviews {
+        border-radius: 0;
+        margin-right: 0;
+      }
+    }
+
+    &-info {
+      padding: 40px 117px 40px 99px;
+
+      .btn {
+        @include reviews {
+          padding-left: 49px;
+        }
+
+        span:first-child {
+          margin-right: 20px;
+
+          @include reviews {
+            margin-right: 35px;
+          }
+        }
+      }
+
+      @include largeDesktops {
+        padding: 40px;
+        max-height: 266px;
+      }
+
+      @include reviews {
+        padding: 25px;
+        width: 80vw;
+      }
+
+      @include sPhones {
+        width: 100%;
+      }
+    }
+
+    &-heading {
+      margin: 0;
+      font: 500 22px Rubik;
+      line-height: 15px;
+
+      @include largeDesktops {
+        line-height: 14px;
+        letter-spacing: -1.4px;
+      }
+
+      @include reviews {
+        font-size: 20px;
+      }
+    }
+
+    &-list {
+      margin: 30px 0;
+      @include flex("column", "center", "flex-start");
+
+      @include largeDesktops {
+        margin: 27px 0;
+      }
+
+      @include reviews {
+        margin: 25px 0;
+      }
+
+      &__item {
+        width: max-content;
+        @include flex();
+
+        span {
+          line-height: 13px;
+        }
+
+        @include largeDesktops {
+          span {
+            line-height: 11px;
+            font-size: 15px;
+          }
+        }
+
+        @include media-custom(319px) {
+          span {
+            line-height: 15px;
+            max-width: 50vw;
+          }
+        }
+      }
+
+      &__item:nth-child(-n + 2) {
+        margin-bottom: 20px;
+
+        @include largeDesktops {
+          margin-bottom: 17px;
+        }
+      }
+    }
+
+    .slick-list {
+      padding: 0px 50px 0 42px !important;
+
+      @include largeDesktops {
+       padding: 0!important;
+      }
+    }
+  }
+
+  &__controls {
+    position: relative;
+    margin-top: 55px;
+    @include flex("row");
+    width: 100%;
+    max-width: 1030px;
+
+    @include largeDesktops {
+      margin-top: 50px;
+    }
+
+    &-dots {
+      margin-bottom: 12px;
+    }
+
+    &-arrows {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      @include largeDesktops {
+        display: none;
+      }
+    }
+  }
+}
+
+.elem_margin_bottom {
+  margin-bottom: 140px;
+
+  @include largeDesktops {
+    margin-bottom: 120px;
+  }
+
+  @include reviews {
+    margin-bottom: 70px;
+  }
+}

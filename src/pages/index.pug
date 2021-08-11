@@ -1,14 +1,12 @@
 extends common/layout
+include components/general
+include components/priorities
+include components/rooms
+include components/reviews
 
 block content
-  main.main
-    h2 Title
-    include includes/index/banner
-    hr
-    p paragraph
-    img(src="img/forest.jpg", alt="")
-    ul.items
-      li.items__t
-      li.items__t
-      li.items__t
-    //- и другие блоки
+    main.main 
+        +general()
+        +priorities()
+        +rooms('Номера')
+        +reviews()

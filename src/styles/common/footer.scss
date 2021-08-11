@@ -1,5 +1,8 @@
+@import "../mixins/media";
+
+@import "../mixins/flex.scss";
+
 .footer {
-  border:
-    1px
-    solid red;
+  @include flex("column");
+  flex-wrap: wrap;
 }

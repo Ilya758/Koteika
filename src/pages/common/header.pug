@@ -1,2 +1,10 @@
-header
-  p Header
+include ../components/navigation
+
+header.header
+  .header-inner
+    .container
+      .content.header-inner__content
+        .header-inner__logo
+          a(href="index.html")
+            img(src="../../img/logo.svg" alt="logo")
+        +navigation("header-inner")

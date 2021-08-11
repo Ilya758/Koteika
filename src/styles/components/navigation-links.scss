@@ -1,0 +1,24 @@
+@each $elem in header-inner, footer-bottom {
+  .#{$elem} {
+    &__link {
+      font: 600 16px $main_f;
+      line-height: 19px;
+      color: var(--text-black);
+      transition: 0.35s;
+      position: relative;
+
+      &:hover {
+        top: 2px;
+        left: -2px;
+        color: var(--bcg-yellow);
+        animation: indentBot 0.05s linear;
+        @include reviews {
+          color: var(--bcg-white);
+          top: 0;
+          left: 0;
+          animation: none;
+        }
+      }
+    }
+  }
+}

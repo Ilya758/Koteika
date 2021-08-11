@@ -1,0 +1,15 @@
+mixin reviews 
+    section.reviews#reviews 
+        .container 
+            .reviews__content
+                h2.reviews__heading Отзывы
+                .reviews__slider
+                    - for (let i = 0; i < 3; i++)    
+                        .reviews__slider-item 
+                            include ../includes/index/review-text
+                            .reviews__slider-text
+                                span Валерия Гришаева
+                                span 15 ноября, 2019
+                .reviews__controls
+                    .reviews__controls-dots
+                    .reviews__controls-arrows              

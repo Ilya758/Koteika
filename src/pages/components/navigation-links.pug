@@ -1,0 +1,11 @@
+include social
+
+mixin navigation-links(cls)
+    each elem, index in {"/#why_us": "Почему мы?", "catalogue.html": "Номера", "/#reviews": "Отзывы", "/#map": "Как нас найти", "tel:8(800)333-55-99": "8 (800) 333-55-99", "span": true}
+        if (index == "span") 
+            li.item(class=`${cls}__item`)
+                +social(`${cls}`)
+        else 
+            li.item(class=`${cls}__item`)
+                a(href=`${index}` class=`${cls}__link`)=elem
+            

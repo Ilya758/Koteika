@@ -1,0 +1,197 @@
+@import "../utils/variables";
+
+@import "../utils/fonts";
+
+.reviews {
+  display: block;
+
+  &__content {
+    position: relative;
+    @include flex("column");
+    padding-top: 165px;
+    margin-bottom: 140px;
+
+    @include largeDesktops {
+      padding-top: 110px;
+      margin-bottom: 110px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      mask-image: url(../../../img/background_content_paw_topleft.svg);
+      width: 304px;
+      height: 256px;
+      background-color: var(--bcg-yellow);
+      opacity: 0.65;
+      top: 0;
+      right: -20px;
+
+      @include largeDesktops {
+        mask-size: cover;
+        width: 227px;
+        height: 194px;
+      }
+
+      @include reviews {
+        mask-size: cover;
+        width: 112px;
+        height: 95px;
+        top: 35px;
+        right: -15px;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 0 0 65px 0;
+    font: bold 36px Rubik;
+    line-height: 23px;
+
+    @include largeDesktops {
+      margin-bottom: 60px;
+    }
+
+    @include reviews{
+      font-size: 28px;
+      margin-bottom: 34px;
+      line-height: 20px;
+    }
+  }
+
+  &__slider {
+    margin-left: 98px;
+
+    @include largeDesktops {
+      margin-left: 25px;
+    }
+
+    @include reviews {
+      margin-left: 0;
+    }
+
+    &-item {
+      @include flex("column");
+      position: relative;
+      max-width: 470px;
+      background: #ffffff;
+      box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+      border-radius: 8px;
+      padding: 22px 38px 33px 70px;
+
+      @include largeDesktops {
+        max-width: 442px;
+        padding-top: 30px;
+      }
+
+      @include reviews {
+        max-width: 83vw;
+        padding: 25px 21px 25px 56px;
+      }
+
+      p {
+        font-weight: 500;
+        line-height: 21.5px;
+        margin: 0;
+
+        @include largeDesktops {
+          font-size: 15px;
+          width: max-content;
+          max-width: 340px;
+        }
+
+        @include reviews{
+          max-width: none;
+          width: fit-content;
+        }
+
+        &::before {
+          display: block;
+          content: "";
+          position: absolute;
+          mask-image: url(../img/icons/icon_quotes.svg);
+          background-color: var(--bcg-yellow);
+          mask-repeat: no-repeat;
+          mask-size: contain;
+          top: 33px;
+          left: 39px;
+          width: 21px;
+          height: 23px;
+
+          @include reviews {
+            left: 29px;
+            width: 16px;
+            height: 19px;
+            top: 28px;
+          }
+        }
+      }
+    }
+
+    &-text {
+      @include flex("row", "space-between");
+      margin: 21px 0 0 0;
+      color: var(--text-gray);
+      font-size: 14px;
+      width: 100%;
+
+      @include reviews {
+        display: none;
+      }
+
+      span {
+        line-height: 9.5px;
+      }
+    }
+
+    .slick-list {
+      max-width: 1268px;
+      width: calc(100vw - 115px);
+
+      @include largeDesktops {
+        @include flex(column, center, flex-start);
+        padding: 0 !important;
+        width: calc(100vw - 65px);
+      }
+
+      @include reviews {
+        max-width: calc(100vw - 30px);
+      }
+    }
+
+    .slick-slide {
+      padding: 0 30px 0 0;
+
+      @include reviews {
+        padding: 0 30px !important;
+      }
+    }
+  }
+
+  &__controls {
+    @include flex("row");
+    position: relative;
+    margin-top: 51px;
+    max-width: 1030px;
+    width: 100%;
+
+    @include reviews {
+      margin-top: 25px;
+    }
+
+    &-dots {
+      margin-bottom: 11px;
+    }
+
+    &-arrows {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      @include largeDesktops {
+        display: none;
+      }
+    }
+  }
+}
