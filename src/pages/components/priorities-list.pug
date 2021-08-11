@@ -1,0 +1,10 @@
+mixin priorities-list 
+    ul.list.priorities__list
+        each elem, i in ["temperature", "videocam", "taxi", "food", "walking", "doctor"]
+            li.item.priorities__item 
+                span(class=`--${elem}-icon`)
+                ul.list.priorities__info-list
+                    li.priorities__info-item 
+                        span Комфортная температура
+                        p Во всех номерах поддерживается    комфортная температура в пределах 23- 25 градусов. В каждом номере можно дополнительно отрегулировать температуру. 
+                        
