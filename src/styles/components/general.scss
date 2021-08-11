@@ -1,0 +1,83 @@
+@import "../utils/variables";
+
+@import "../utils/fonts";
+
+.general {
+  background: url(../../../img/background_cat.jpg) no-repeat center center;
+  width: 100%;
+  height: 504px;
+  @include flex("column", "flex-start", "flex-start");
+
+  @include largeDesktops {
+    background: url(../../../img/background_cat_tablet.jpg) center bottom;
+    background-size: cover;
+    height: 868px;
+  }
+
+  @include reviews {
+    background: url(../../../img/background_cat_mobile.jpg) center bottom;
+    background-size: cover;
+    height: 457px;
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__content {
+    margin: 150px 0 0 178px;
+
+    @include largeDesktops {
+      margin-top: 140px;
+    }
+
+    span:first-child {
+      display: block;
+      line-height: 10px;
+      font-size: 14px;
+
+      @include reviews {
+        font-size: 12px;
+      }
+    }
+
+    h1 {
+      font: bold 62px Rubik;
+      line-height: 31px;
+      margin: 21px 0 31px;
+
+      @include reviews {
+        margin: 12px 0 19px;
+        font-size: 44px;
+      }
+    }
+
+    span:nth-child(3) {
+      display: block;
+      font: 500 20px Lato;
+      line-height: 15px;
+      margin-bottom: 40px;
+
+      @include reviews {
+        font-size: 16px;
+      }
+    }
+
+    @include largeDesktops {
+      @include flex("column", "center", "center");
+      margin-left: 0;
+    }
+
+    @include reviews {
+      margin-top: 50px;
+    }
+
+    &-btn {
+      padding-left: 29px;
+      span:first-child {
+        font-size: 16px !important;
+        margin-right: 20px;
+      }
+    }
+  }
+}
