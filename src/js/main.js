@@ -1,4 +1,11 @@
 $(document).ready(() => {
-  // eslint-disable-next-line no-console
-  console.log('document ready');
+  $('.rooms__slider').slick({
+    dots: true,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+    variableWidth: true,
+    centerMode: true,
+    appendDots: '.rooms__controls-dots',
+    appendArrows: '.rooms__controls-arrows',
+  });
 });
