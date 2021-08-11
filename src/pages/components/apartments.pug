@@ -1,0 +1,17 @@
+include dropdown-filter
+include apartments-cards
+
+mixin apartments()
+    section.apartments 
+        .container 
+            .content.apartments__content 
+                .apartments__info
+                    h1.apartments__heading Наши номера
+                    .apartments__buttons 
+                        button.apartments__filter-btn.apartments__dropdown-btn(type="button" id="btn") 
+                            span.icons.--filter-icon
+                            span.text_e_dropdown.apartments__filter-text(id="filter") Фильтры
+                        +dropdown-filter()
+                .apartments__bottom
+                    +filter-form()
+                    +apartments-cards()

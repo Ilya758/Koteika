@@ -1,0 +1,220 @@
+.apartments-cards {
+
+  &__redirect {
+    width: 100%;
+    @include flex(row, center, center);
+  }
+  
+  &__list {
+    @include flex(row, space-between, center);
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 -15px;
+  }
+
+  &__item {
+    @include flex(column, flex-start, center);
+    padding: 0 15px;
+    box-sizing: content-box;
+    width: calc((100% / 3) - 30px);
+    border-radius: 6px;
+    transition: 0.25s;
+
+    @include largeDesktops {
+      width: calc((100% / 2) - 30px);
+      padding: 0;
+    }
+
+    @include reviews {
+      width: calc((100% / 2) - 10px);
+    }
+
+    @include landscapePhones {
+      width: calc(100% / 1);
+    }
+  }
+
+  &__item:nth-child(-n + 6) {
+    margin-bottom: 30px;
+  }
+
+  &__pic {
+    @include largeDesktops {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    @include flex(column, center, center);
+    border-top: none;
+    width: 100%;
+  }
+
+  &__container {
+    @include flex(column, flex-start, center);
+    text-decoration: none;
+    color: var(--text-black);
+    background: #ffffff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+    
+    a {
+      width: 100%;
+    }
+
+    &:hover {
+      box-shadow: 0 0 20px 4px var(--bcg-yellow);
+    }
+
+    @include largeDesktops {
+      width: 100%;
+    }
+  }
+
+  &__icons {
+    @include flex(row, center, center);
+
+    span:first-child {
+      margin-right: 12px;
+      white-space: nowrap;
+
+      @include reviews {
+        white-space: normal;
+      }
+    }
+
+    .icons {
+      margin-bottom: 15px;
+
+      @include largeDesktops {
+        margin-right: 5px;
+        width: 21px;
+        background-position: center;
+        display: flex;
+        background-size: contain;
+        height: 20px;
+      }
+
+      &:hover {
+        cursor: help;
+      }
+    }
+  }
+
+  &__text {
+    @include flex(column, flex-start, flex-start);
+    font-size: 14px;
+    padding: 0 20px;
+
+    @include largeDesktops {
+      width: 100%;
+    }
+
+    span:nth-child(-n + 4) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__heading {
+    margin: 25px 0 20px;
+    font: 500 20px Rubik;
+  }
+
+  &__btn {
+    margin: 25px 0 35px;
+    padding: 6px;
+
+    @include largeDesktops {
+      width: calc(100% - 40px);
+    }
+
+    span:first-child {
+      margin: 0 30px 0 35px;
+      flex: 1;
+    }
+  }
+}
+
+$icons: empty 16px 16px -33px 30px "Пустой номер", bed 16px 12px -30px 30px "Лежак",
+  scratching_post 16px 12px -30px 30px "Когтеточка",
+  gameroom 16px 16px -75px 30px "Игровой комплекс - 3 яруса", house 16px 16px -32px 30px "Домик";
+
+@each $name, $w, $h, $ind1, $ind2, $text in $icons {
+  .--#{$name}-icon {
+    position: relative;
+    display: block;
+    background-image: url(`../../../../img/icons/icon_#{$name}.svg);
+    background-repeat: no-repeat;
+    margin: 0 0 0 3px;
+    width: #{$w};
+    height: #{$h};
+    transition: 0.25s linear;
+
+    &:hover .#{$name}-helper {
+      display: block;
+      animation: appear 0.5s linear;
+    }
+
+    .#{$name}-helper {
+      display: none;
+      top: -46px;
+      left: #{$ind1};
+      border: 1px solid var(--bcg-yellow);
+      white-space: nowrap;
+      width: max-content;
+      color: var(--text-black);
+      background-color: #ffffff;
+      padding: 5px 10px;
+      box-sizing: content-box;
+      border-radius: 4px;
+      position: absolute;
+
+      &::before {
+        display: inline-block;
+        position: absolute;
+        content: "";
+        top: 28px;
+        left: 32px;
+        border: 8px solid transparent;
+        border-top: 8px solid var(--bcg-yellow);
+        width: 0;
+        height: 0;
+      }
+      
+      &::after {
+        display: inline-block;
+        position: absolute;
+        content: "";
+        top: 25px;
+        left: #{$ind2};
+        border: 10px solid transparent;
+        border-top: 10px solid #ffffff;
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}
+
+.--gameroom-icon {
+
+  .gameroom-helper {
+    
+    &::before {
+      left: 73px;
+    }
+  
+    &::after {
+      left: 71px;
+    } 
+  }
+}
+
+.text_weight_bold {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}

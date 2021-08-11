@@ -1,0 +1,22 @@
+mixin filter-form 
+    .wrapper_elem_form 
+        form.apartments-form(action="#")
+            span.wrapper_elem_close-btn
+            span Цена за сутки, ₽
+            .apartments-form__input
+                input.apartments-form__input-elem(type="number", name="min" value="" placeholder="от 100")
+                input.apartments-form__input-elem(type="number", name="max" value="" placeholder="до 600")
+            span Площадь
+            .apartments-form__square-checkbox 
+                each num, i in ["0.63 м2", "0.90 м2", "1.13 м2", "1.56 м2", "2.56 м2", "2.88 м2"]
+                    label.apartments-form__label
+                        input.apartments-form__checkbox(type="checkbox" name="square" value=`${i}`)
+                        span.apartments-form__text=num
+            span Оснащение номера
+            .apartments-form__equipment-checkbox
+                each num, i in ["Пустой номер", "Лежак", "Когтеточка", "Игровой-комлпекс", "Домик"]
+                        label.apartments-form__label
+                            input.apartments-form__checkbox(type="checkbox" name="equipment" value=`${i}`)
+                            span.apartments-form__text=num
+            button.apartments-form__btn.btn_type_submit(type="submit") Применить
+            button.apartments-form__btn.btn_type_reset(type="reset") Сбросить фильтр

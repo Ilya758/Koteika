@@ -1,0 +1,9 @@
+extends common/layout
+include ../pages/components/apartments
+include ../pages/components/filter-form
+include ../pages/components/banner
+
+block content 
+    main.main 
+        +apartments()
+        +banner()

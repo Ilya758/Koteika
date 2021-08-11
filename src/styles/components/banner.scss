@@ -1,0 +1,95 @@
+.banner {
+    display: block;
+
+    &__content {
+        position: relative;
+        padding: 78px 0 78px 270px;
+        width: 100%;
+        background: url(../../img/banner.jpg) no-repeat center center;
+        max-height: 379px;
+        border-radius: 10px;
+        margin-bottom: 140px;
+        z-index: 999;
+
+        @include largeDesktops {
+            padding: 69px 0 69px 50px;  
+            max-height: 359px;
+            margin-bottom: 120px;
+        }
+
+        @include reviews {
+            margin-bottom: 70px;
+            padding: 50px 29px 0 28px;
+            max-height: none;
+            background-position: bottom;
+            background-size: cover;
+            height: 496px;
+            background-image: url(../../img/banner_size_mob.jpg);
+        }
+
+        &::before {
+            mask-image: url(../../img/background_content_paw_bottom_right.svg);
+            background-color: var(--bcg-white);
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: -5px -33px;
+            content: '';
+            position: absolute;
+            display: block;
+            width: 206px;
+            left: 80px;
+            height: 241px;
+            top: 70px;
+            z-index: 1000;
+
+            @include largeDesktops {
+                top: -15px;
+                left: -45px;
+                mask-size: cover;
+                z-index: -1;
+            }
+        }
+    }
+
+    &__info {
+        max-width: 325px;
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__heading {
+        @include flex(column, flex-start, flex-start);
+        margin: 0;
+        font: bold 36px Rubik;
+        line-height: 27px;
+
+        @include reviews {
+            white-space: nowrap;
+            font-size: 24px;
+            line-height: 17px;
+        }
+
+        @media screen and (max-width: 319px) {
+            white-space: normal;
+        }
+
+        span {
+            font-size: 56px;
+            line-height: 44px;
+
+            @include reviews {
+                font-size: 37px;
+                line-height: 38px;
+            }
+        }
+    }
+
+    &__text {
+        margin: 25px 0 35px;
+        line-height: 112%;
+
+        @include reviews {
+            font-size: 15px;
+            margin: 20px 0 30px;
+        }
+    }
+}
