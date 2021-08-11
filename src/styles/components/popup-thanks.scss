@@ -1,0 +1,106 @@
+.wrapper_elem {
+
+    &_popup-thanks {
+      display: none;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      padding: 136px 0;
+      width: 100vw;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+      transition: 0.25s linear;
+      z-index: 1001;
+    }
+  
+      @include reviews {
+        padding: 102px 0;
+    }
+}
+
+.popup-thanks {
+    display: block;
+
+    &__content {
+        position: relative;
+        background-color: #ffffff;
+        margin: 0 auto;
+        @include flex(column, center, center);
+        padding: 70px 132px 43px;
+        max-width: 570px;
+        background: #FFFEFD;
+        box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+        border-radius: 10px;
+
+        @include largeDesktops {
+            max-width: 502px;
+        }
+
+        @include reviews {
+            padding: 60px 27px;
+            max-width: 290px;
+        }
+
+        .wrapper_elem_close-btn {
+            display: inline-block;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            mask-image: url(../../img/background_content_paw_topright.svg);
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            width: 157px;
+            height: 114px;
+            bottom: 0px;
+            left: -26px;
+            background-color: var(--bcg-yellow);
+
+            @include reviews {
+                mask-size: 80%;
+                width: 167px;
+                height: 99px;
+                bottom: 0px;
+                left: -23px;
+            }
+        }
+    }
+
+    &__heading {
+        font: bold 28px Rubik;
+        line-height: 19px;
+        margin: 0;
+        white-space: nowrap;
+
+        @include reviews {
+            font-size: 24px;
+        }
+    }
+
+    &__text {
+        white-space: nowrap;
+        margin: 25px 0 50px;
+
+        @include reviews {
+            margin: 20px 0 35px;
+            white-space: normal;
+            text-align: center;
+        }
+    }
+
+    &__btn {
+        
+        @include reviews {
+            &.btn {
+                padding-left: 30px;
+            }
+
+            span:first-child {
+                margin-right: 20px;
+            }
+        }
+    }    
+}

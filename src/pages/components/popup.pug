@@ -1,0 +1,32 @@
+mixin popup
+    .wrapper_elem_popup
+        .popup 
+            .container 
+                .popup__content 
+                    form.popup__form(action="#" name="form")
+                        span.wrapper_elem_close-btn
+                        h3.popup__heading Забронировать номер
+                        .popup__elem-container 
+                            input.popup__input(type="text" name="client" placeholder="Ваше имя" id="client")
+                            p.name Введите корректное имя
+                        .popup__elem-container 
+                            input.popup__input(type="text" name="pet" placeholder="Имя Питомца" id="pet")
+                            p.pet Введите имя питомца
+                        .popup__elem-container
+                            input.popup__input(type="tel" name="tel" placeholder="Телефон" id="phone") 
+                            p.phone Введите корректный номер телефона
+                        .popup__elem-container    
+                            input.popup__input(type="email" name="email" placeholder="E-mail" id="email")
+                            p.email Введите корректный email-адрес
+                        .popup__date-container 
+                            .popup__date-content 
+                                span Дата заезда
+                                .popup__date-elem
+                                    span с
+                                    input.popup__date(type="date", name="date-min" ) 
+                                    span по 
+                                    input.popup__date(type="date", name="date-max" ) 
+                            p.date Введите корректную дату поступления и выезда
+                        button.popup__btn.btn.btn_c_orange(type="button") 
+                                span Отправить заявку
+                                span   
