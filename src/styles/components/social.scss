@@ -1,0 +1,12 @@
+@each $elem in fb, inst, vk {
+  .--#{$elem}-icon {
+    background-image: url(../../img/icons/icon_#{$elem}.svg);
+    margin: 0 20px 0 0;
+    transition: 0.25s linear;
+  }
+
+  .--#{$elem}-icon:hover {
+    background-image: url(../../img/icons/icon_#{$elem}_hover.svg);
+    margin: 0 20px 0 0;
+  }
+}

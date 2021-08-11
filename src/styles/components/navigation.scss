@@ -1,0 +1,156 @@
+@import "../utils/variables";
+
+@import "../utils/fonts";
+
+@each $elem in header-inner, footer-bottom {
+  .#{$elem} {
+    &__list {
+      @include reviews {
+        @include flex("column", "flex-start", "flex-start");
+        display: none;
+        margin-top: 0;
+        animation: toRight 0.25s linear;
+      }
+    }
+
+    &__item:nth-child(n + 5) {
+      display: none;
+
+      @include reviews {
+        display: block;
+      }
+    }
+
+    &__item {
+      width: max-content;
+    }
+
+    &__item:nth-child(-n + 3) {
+      margin-right: 30px;
+
+      @include reviews {
+        margin-bottom: 25px;
+      }
+    }
+
+    &__item:nth-child(5) &__link {
+      display: block;
+      margin: 40px 0 25px;
+
+      @include reviews{
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 18.96px;
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: static;
+
+  &__btn {
+    position: absolute;
+    top: 23px;
+    right: 15px;
+    display: none;
+    mask-image: url(../../img/icons/icon_menu.svg);
+    width: 24px;
+    height: 16px;
+    background-color: var(--text-black);
+    cursor: pointer;
+    transition: 0.25s;
+
+    @include reviews {
+      display: block;
+    }
+
+    &:hover {
+      background-color: var(--bcg-yellow);
+    }
+
+    &_st_active {
+      mask-image: url(../../img/icons/icon_popup_close.svg);
+      width: 18px;
+      height: 18px;
+      mask-repeat: no-repeat;
+      transform: rotate(180deg);
+
+      &:hover {
+        background-color: var(--bcg-white);
+      }
+    }
+  }
+
+  &__content-nav {
+    top: 79px;
+    left: 0;
+    width: 100%;
+    padding: 38px 0 0 15px;
+    animation: toRight 0.25s linear;
+
+    @include reviews {
+      padding-left: 0;
+    }
+  }
+}
+
+.footer-bottom {
+  &__nav {
+    @include reviews {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    @include reviews {
+      @include flex("row", "space-between", "flex-start");
+      flex-wrap: wrap;
+      margin-top: 25px;
+      margin-right: 30px;
+    }
+  }
+
+  @include reviews {
+    &__item:first-child {
+      order: -2;
+    }
+
+    &__item:nth-child(3) {
+      order: -1;
+    }
+  }
+
+  .footer-bottom__item:nth-child(-n + 3) {
+    @include reviews {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    @include reviews {
+      width: calc(100% / 2);
+    }
+  }
+
+  &__item:nth-child(n + 5) {
+    display: none !important;
+  }
+
+  &__link {
+    font: 600 16px Lato;
+    line-height: 12px;
+    color: #1a212f;
+    transition: 0.35s;
+    position: relative;
+
+    &:hover {
+      top: 1px;
+      left: -1px;
+      color: #ff7236;
+      animation: indentBot 0.1s linear;
+    }
+  }
+}

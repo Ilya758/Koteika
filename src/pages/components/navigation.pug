@@ -1,0 +1,13 @@
+include navigation-links
+
+mixin navigation(cls)
+  if (cls=="header-inner")
+    .dropdown   
+      .dropdown__btn
+      nav(class=`${cls}__nav`)
+        ul.list(class=`${cls}__list`)
+          +navigation-links(cls)
+  else 
+    nav(class=`${cls}__nav`)
+      ul.list(class=`${cls}__list`)
+        +navigation-links(cls)

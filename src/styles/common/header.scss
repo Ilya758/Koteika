@@ -1,10 +1,42 @@
 @import "../mixins/media";
 
-header {
-  width: 220px;
-  background-color: red;
+@import "../mixins/flex.scss";
 
-  @include media-tablet {
-    width: 500px;
+.header {
+  @include flex();
+
+  &-inner {
+    width: 100%;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+
+    &__content {
+      padding: 12px 78px;
+      justify-content: space-between;
+
+      @include largeDesktops {
+        padding: 12px 25px 9px;
+      }
+
+      @include reviews() {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 0;
+      }
+    }
+
+    &__logo {
+      cursor: pointer;
+      transition: 0.25s;
+
+      @include reviews {
+        width: 46px;
+        height: 38px;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 }

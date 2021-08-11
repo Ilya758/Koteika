@@ -1,0 +1,5 @@
+mixin social(elem)
+    ul.list(class=`${elem}__social-list`)
+        each e, i in ["fb", "inst","vk"]
+          li.item(class=`${elem}-icon__social-item`)
+            a.icons(href="#" class=`--${e}-icon`)
