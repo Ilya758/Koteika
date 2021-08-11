@@ -1,0 +1,15 @@
+include gallery-text 
+include gallery-pics 
+
+mixin gallery()
+    section.gallery 
+        .container 
+            .gallery__content 
+                .gallery__pics 
+                    +gallery-pics()
+                .gallery__info 
+                    h1.gallery__heading Супер-Люкс
+                    +gallery-text()
+                    button.gallery__btn.btn.btn_c_orange(type="submit") 
+                        span Забронировать
+                        span   

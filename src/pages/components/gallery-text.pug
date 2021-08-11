@@ -1,0 +1,10 @@
+mixin gallery-text
+    span Размеры (ШхГхВ) - 180х160х180 см
+    span Площадь - 2,88 м2
+    span Оснащение номера
+    .gallery__info-container 
+        each url, name in {'Лежак': 'bed', "Домик": "house", "Игровой комплекс - 3 яруса": "gameroom", "Когтеточка": "scratching_post" }
+            .elem-container 
+                span(class=`--${url}-icon icon_margin_right`)
+                span=name
+    span Цена за сутки:<span class="text_weight_bold"> 100₽</span>         

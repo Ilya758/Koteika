@@ -1,0 +1,8 @@
+extends common/layout
+include components/rooms
+include components/gallery
+
+block content 
+    main.main
+        +gallery() 
+        +rooms("Наши номера", 'elem_margin_bottom')
