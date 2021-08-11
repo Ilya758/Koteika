@@ -1,0 +1,93 @@
+@import "../utils/variables";
+
+@import "../utils/fonts";
+
+.footer-bottom {
+  position: relative;
+  width: 100%;
+
+  @include flex("column");
+
+  &::before {
+    position: absolute;
+    top: 76px;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #efefef;
+
+    @include reviews {
+      top: 165px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+  }
+
+  &__content {
+    flex-direction: column;
+    padding: 12px 178px 0;
+
+    @include largeDesktops {
+      padding: 12px 25px;
+    }
+
+    @include reviews {
+      padding: 30px 0 !important;
+    }
+  }
+
+  &__top {
+    width: 100%;
+
+    @include flex("row", "space-between");
+
+    @include reviews {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+    transition: 0.25s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    @include reviews {
+      width: 46px;
+    }
+  }
+
+  &__copyright {
+    width: 100%;
+    padding: 29px 0 20px;
+    font-size: 12px;
+    line-height: 9px;
+    color: #8f8f8f;
+
+    @include flex("row", "space-between");
+
+    @include reviews {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    a {
+      transition: 0.35s linear;
+      color: #8f8f8f;
+
+      &:hover {
+        color: var(--bcg-yellow);
+      }
+
+      @include reviews {
+        margin-top: 20px;
+      }
+    }
+  }
+}

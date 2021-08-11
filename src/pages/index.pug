@@ -2,9 +2,11 @@ extends common/layout
 include components/general
 include components/priorities
 include components/rooms
+include components/reviews
 
 block content
     main.main 
         +general()
         +priorities()
         +rooms('Номера')
+        +reviews()
