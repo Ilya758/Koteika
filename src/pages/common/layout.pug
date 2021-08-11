@@ -1,14 +1,13 @@
 doctype html
 html(lang="ru")
-    block variables
-      -var title = 'Page'
     block head
         head
             meta(charset="utf-8")
-            title #{title} | Title your site
+            title Котейка
             meta(content="width=device-width, initial-scale=1" name="viewport")
             meta(content="ie=edge" http-equiv="x-ua-compatible")
-            include styles
+            block styles
+                include styles
     body
         block header
             include header
