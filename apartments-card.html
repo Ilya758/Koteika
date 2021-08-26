@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8">
+  <title>Котейка</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css">
+ </head>
+ <body>
+    <div class="wrapper_elem_popup">
+     <div class="popup"> 
+      <div class="container"> 
+       <div class="popup__content"> 
+        <form class="popup__form" action="#" name="form"><span class="wrapper_elem_close-btn"></span>
+         <h3 class="popup__heading">Забронировать номер</h3>
+         <div class="popup__elem-container"> 
+          <input class="popup__input" type="text" name="client" placeholder="Ваше имя" id="client">
+          <p class="name">Введите корректное имя</p>
+         </div>
+         <div class="popup__elem-container"> 
+          <input class="popup__input" type="text" name="pet" placeholder="Имя Питомца" id="pet">
+          <p class="pet">Введите имя питомца</p>
+         </div>
+         <div class="popup__elem-container">
+          <input class="popup__input" type="tel" name="tel" placeholder="Телефон" id="phone">
+          <p class="phone">Введите корректный номер телефона</p>
+         </div>
+         <div class="popup__elem-container">   
+          <input class="popup__input" type="email" name="email" placeholder="E-mail" id="email">
+          <p class="email">Введите корректный email-адрес</p>
+         </div>
+         <div class="popup__date-container"> 
+          <div class="popup__date-content"> <span>Дата заезда</span>
+           <div class="popup__date-elem"><span>с</span>
+            <input class="popup__date" type="date" name="date-min"><span>по </span>
+            <input class="popup__date" type="date" name="date-max">
+           </div>
+          </div>
+          <p class="date">Введите корректную дату поступления и выезда</p>
+         </div>
+         <button class="popup__btn btn btn_c_orange" type="button"> <span>Отправить заявку</span><span>  </span></button>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="wrapper_elem_popup-thanks"> 
+     <div class="popup-thanks">
+      <div class="popup-thanks__content"> <span class="wrapper_elem_close-btn btn_type_submit-form"></span>
+       <h3 class="popup-thanks__heading">Спасибо за заявку!</h3><span class="popup-thanks__text">Мы свяжемся с Вами в ближайшее время</span>
+       <button class="popup-thanks__btn btn btn_c_orange btn_type_submit-form" type="submit"> <span>Ок</span><span>  </span></button>
+      </div>
+     </div>
+    </div>
+  <header class="header">
+   <div class="header-inner">
+    <div class="container">
+     <div class="content header-inner__content">
+      <div class="header-inner__logo"><a href="index.html"><img src="img/logo.svg" alt="logo"></a></div>
+        <div class="dropdown">  
+         <div class="dropdown__btn"></div>
+         <nav class="header-inner__nav">
+          <ul class="list header-inner__list">
+             <li class="item header-inner__item"><a class="header-inner__link" href="#why_us">Почему мы?</a></li>
+             <li class="item header-inner__item"><a class="header-inner__link" href="catalogue.html">Номера</a></li>
+             <li class="item header-inner__item"><a class="header-inner__link" href="#reviews">Отзывы</a></li>
+             <li class="item header-inner__item"><a class="header-inner__link" href="#map">Как нас найти</a></li>
+             <li class="item header-inner__item"><a class="header-inner__link" href="tel:8(800)333-55-99">8 (800) 333-55-99</a></li>
+             <li class="item header-inner__item">
+                <ul class="list header-inner__social-list">
+                 <li class="item header-inner-icon__social-item"><a class="icons --fb-icon" href="#"></a></li>
+                 <li class="item header-inner-icon__social-item"><a class="icons --inst-icon" href="#"></a></li>
+                 <li class="item header-inner-icon__social-item"><a class="icons --vk-icon" href="#"></a></li>
+                </ul>
+             </li>
+          </ul>
+         </nav>
+        </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <main class="main">
+   <section class="gallery"> 
+    <div class="container"> 
+     <div class="gallery__content"> 
+      <div class="gallery__pics"> 
+       <div class="gallery__pics-container"> 
+        <div class="gallery__pics-secondary"> <a href="img/gallery_pic1_large.jpg" data-fancybox="images">
+          <picture> 
+           <source srcset="img/gallery_pic1_icon.jpg 70w, img/gallery_pic1_icon_medium.jpg 104w, img/gallery_pic1_icon_small.jpg 86w," sizes="(min-width: 1200px) 70px, (min-width: 768px) 104px, (min-width: 320px) 86px"/><img class="gallery__pics-elem" src="img/gallery_pic1_icon.jpg" alt="gallery-pic1"/>
+          </picture></a><a href="img/gallery_pic2_large.jpg" data-fancybox="images">
+          <picture> 
+           <source srcset="img/gallery_pic2_icon.jpg 70w, img/gallery_pic2_icon_medium.jpg 104w, img/gallery_pic2_icon_small.jpg 86w," sizes="(min-width: 1200px) 70px, (min-width: 768px) 104px, (min-width: 320px) 86px"/><img class="gallery__pics-elem" src="img/gallery_pic2_icon.jpg" alt="gallery-pic1"/>
+          </picture></a><a href="img/gallery_pic3_large.jpg" data-fancybox="images">
+          <picture> 
+           <source srcset="img/gallery_pic3_icon.jpg 70w, img/gallery_pic3_icon_medium.jpg 104w, img/gallery_pic3_icon_small.jpg 86w," sizes="(min-width: 1200px) 70px, (min-width: 768px) 104px, (min-width: 320px) 86px"/><img class="gallery__pics-elem" src="img/gallery_pic3_icon.jpg" alt="gallery-pic1"/>
+          </picture></a>
+        </div>
+        <picture> 
+         <source srcset="img/slider_cat4.jpg 500w, img/slider_cat4_medium.jpg 354w, img/slider_cat4_small.jpg 290w" sizes="(min-width: 1200px) 500px, (min-width: 768px) 354px, (min-width: 380px) 75vw, (max-width: 379px) 100vw"/><img class="gallery__pics-prime" src="img/slider_cat4.jpg" alt="Cat pic in lux room"/>
+        </picture>
+       </div>
+      </div>
+      <div class="gallery__info"> 
+       <h1 class="gallery__heading">Супер-Люкс</h1><span>Размеры (ШхГхВ) - 180х160х180 см</span><span>Площадь - 2,88 м2</span><span>Оснащение номера</span>
+       <div class="gallery__info-container"> 
+        <div class="elem-container"> <span class="--bed-icon icon_margin_right"></span><span>Лежак</span></div>
+        <div class="elem-container"> <span class="--house-icon icon_margin_right"></span><span>Домик</span></div>
+        <div class="elem-container"> <span class="--gameroom-icon icon_margin_right"></span><span>Игровой комплекс - 3 яруса</span></div>
+        <div class="elem-container"> <span class="--scratching_post-icon icon_margin_right"></span><span>Когтеточка</span></div>
+       </div><span>Цена за сутки:<span class="text_weight_bold"> 100₽</span>         </span>
+       <button class="gallery__btn btn btn_c_orange" type="submit"> <span>Забронировать</span><span>  </span></button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="rooms elem_margin_bottom">
+    <div class="container rooms__container"> 
+     <div class="rooms__content"> 
+      <h2 class="rooms__heading">Наши номера</h2>
+      <div class="rooms__slider">
+       <div class="rooms__slider-item"><img class="rooms__slider-pic" src="img/slider_cat1.jpg" alt="economy_room"/>
+        <div class="rooms__slider-content">    
+         <div class="rooms__slider-info"> 
+          <h3 class="rooms__slider-heading">Эконом плюс</h3>
+          <ul class="list rooms__slider-list"> 
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Площадь - 0,90 м2</span></li>
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Размеры (ШхГхВ) — 90х100х180 см</span></li>
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Цена за сутки: 200₽</span></li>
+          </ul>
+          <button class="btn btn_c_orange rooms__btn" type="button"> <span>Забронировать</span><span>   </span></button>
+         </div>
+        </div>
+       </div>
+       <div class="rooms__slider-item"><img class="rooms__slider-pic" src="img/slider_cat2.jpg" alt="economy_room"/>
+        <div class="rooms__slider-content">    
+         <div class="rooms__slider-info"> 
+          <h3 class="rooms__slider-heading">Эконом плюс</h3>
+          <ul class="list rooms__slider-list"> 
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Площадь - 0,90 м2</span></li>
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Размеры (ШхГхВ) — 90х100х180 см</span></li>
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Цена за сутки: 200₽</span></li>
+          </ul>
+          <button class="btn btn_c_orange rooms__btn" type="button"> <span>Забронировать</span><span>   </span></button>
+         </div>
+        </div>
+       </div>
+       <div class="rooms__slider-item"><img class="rooms__slider-pic" src="img/slider_cat3.jpg" alt="economy_room"/>
+        <div class="rooms__slider-content">    
+         <div class="rooms__slider-info"> 
+          <h3 class="rooms__slider-heading">Эконом плюс</h3>
+          <ul class="list rooms__slider-list"> 
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Площадь - 0,90 м2</span></li>
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Размеры (ШхГхВ) — 90х100х180 см</span></li>
+           <li class="item rooms__slider-list__item"> <span class="dot_c_orange"> </span><span>Цена за сутки: 200₽</span></li>
+          </ul>
+          <button class="btn btn_c_orange rooms__btn" type="button"> <span>Забронировать</span><span>   </span></button>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="rooms__controls">
+       <div class="rooms__controls-dots"></div>
+       <div class="rooms__controls-arrows"></div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer" id="map"> 
+   <div class="footer-top"> 
+    <div class="container footer-top__container"> 
+     <div class="footer-top__content"> 
+      <div class="footer-top__info"> 
+       <h2 class="footer-top__heading">Как нас найти</h2>
+       <ul class="list footer-top__list"> 
+           <li class="item footer-top__item"> <span>Адрес</span>
+            <p>Санкт-Петербург, </p>ул Большая Конюшенная, д 19
+           </li>
+           <li class="item footer-top__item"> <span>Режим работы</span><span>Ежедневно, с 9:00 до 20:00</span></li>
+           <li class="item footer-top__item"> <span>Телефон</span><a href="tel:8(800)333-55-99">8 (800) 333-55-99</a></li>
+           <li class="item footer-top__item"> <span>Email</span><a href="mailto:info@cat-hotel.ru">info@cat-hotel.ru</a></li>
+           <li class="item footer-top__item"> <span>Социальные сети</span>
+              <ul class="list footer-top__social-list">
+               <li class="item footer-top-icon__social-item"><a class="icons --fb-icon" href="#"></a></li>
+               <li class="item footer-top-icon__social-item"><a class="icons --inst-icon" href="#"></a></li>
+               <li class="item footer-top-icon__social-item"><a class="icons --vk-icon" href="#"></a></li>
+              </ul>
+           </li>
+       </ul>
+      </div>
+      <div class="footer-top__map"> </div>
+     </div>
+    </div>
+   </div>
+   <div class="footer-bottom"> 
+    <div class="container footer-bottom__container">
+     <div class="content footer-bottom__content"> 
+      <div class="footer-bottom__top"> 
+       <div class="footer-bottom__logo"><a href="#"><img src="img/logo.svg" alt="logo"></a></div>
+          <nav class="footer-bottom__nav">
+           <ul class="list footer-bottom__list">
+               <li class="item footer-bottom__item"><a class="footer-bottom__link" href="#why_us">Почему мы?</a></li>
+               <li class="item footer-bottom__item"><a class="footer-bottom__link" href="catalogue.html">Номера</a></li>
+               <li class="item footer-bottom__item"><a class="footer-bottom__link" href="#reviews">Отзывы</a></li>
+               <li class="item footer-bottom__item"><a class="footer-bottom__link" href="#map">Как нас найти</a></li>
+               <li class="item footer-bottom__item"><a class="footer-bottom__link" href="tel:8(800)333-55-99">8 (800) 333-55-99</a></li>
+               <li class="item footer-bottom__item">
+                   <ul class="list footer-bottom__social-list">
+                    <li class="item footer-bottom-icon__social-item"><a class="icons --fb-icon" href="#"></a></li>
+                    <li class="item footer-bottom-icon__social-item"><a class="icons --inst-icon" href="#"></a></li>
+                    <li class="item footer-bottom-icon__social-item"><a class="icons --vk-icon" href="#"></a></li>
+                   </ul>
+               </li>
+           </ul>
+          </nav>
+      </div>
+      <div class="footer-bottom__copyright"><span>&copy; 2019 Все права защищены</span><a href="#">Политика конфинденциальности</a></div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script src="libs/jquery/jquery.min.js"> </script>
+  <script src="libs/mask/jquery.mask.min.js"></script>
+  <script src="libs/slick/slick.min.js"> </script>
+  <script src="libs/fancybox/jquery.fancybox.min.js"> </script>
+  <script src="js/main.js"></script>
+ </body>
+</html>
